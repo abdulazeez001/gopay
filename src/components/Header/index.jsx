@@ -1,4 +1,4 @@
-import { Component } from "react";
+
 import { userImageIcon } from "../../assets";
 import styled from 'styled-components'
 
