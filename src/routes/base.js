@@ -26,7 +26,7 @@ import Benefits from "./Benefits/benefits";
 
 import Reports from "./Reports/reports";
 // import Corehr from "./Corehr/corehr";
-import Hire from "./Hire/hire";
+// import Hire from "./Hire/hire";
 import Company from "./Company/company";
 import Wallet from "./Wallet/wallet";
 import Settings from "./Settings/settings";
