@@ -78,12 +78,7 @@ h2{
 `
 
 const Success = ({name,gender}) => {
-    const saveContinue = () =>{
-        document.getElementById('3').children[0].innerHTML= `<img src=${mark} alt="" />`
-        document.getElementById('3').children[0].style["background-color"] = "darkblue"
-        document.getElementById('3').children[0].style["color"] = "white"
-        document.getElementById('4').click()
-     }
+
     return (
         <StlyedBenefits>
             <div className='image'>
