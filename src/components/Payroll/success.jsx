@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mark, paytabIcon } from '../../assets';
+import {paytabIcon } from '../../assets';
 
 const StlyedBenefits = styled.div`
 width:50%;
