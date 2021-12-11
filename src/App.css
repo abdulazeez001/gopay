@@ -1,0 +1,697 @@
+:root{
+  --mm:1rem;
+  --mainClr:#f8f9fa;
+  /* #ffc107 */
+  /* #2B3A90 */
+}
+
+
+*,*::before,*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  
+  /* font-family: Lato; */
+}
+ul > li{
+  list-style: none;
+}
+/* .show-marker > li{
+  list-style:initial;
+  list-style-type:decimal;
+} */
+
+ul,img,button{
+  cursor: pointer;
+}
+img{
+  max-width: 100%;
+}
+img:hover{
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(238, 236, 236); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(228, 225, 225); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(131, 131, 131); 
+}
+
+
+body {
+  /* height: 100%; */
+  position: relative;
+  background: var(--mainClr);
+  /* color: rgb(208, 236, 245); */
+}
+
+.container{
+  display: grid;
+  grid-template-columns:1fr 10fr;
+}
+.content{
+  padding:1.5rem;
+  max-height:100vh;
+  overflow-y:scroll;
+}
+
+
+.tags-container{
+  display: flex;
+  /* justify-content: space-between; */
+  gap: .5rem;
+}
+
+/* canvas{
+  cursor: pointer;
+  background-color: white;
+  padding: 2rem;
+} */
+
+
+/***************** CHARTS STYLE **********************/
+
+
+#chart svg{
+  /* padding: 1rem; */
+}
+.apexcharts-legend-series:first-child::after{
+  content: url('../src/assets/images/dot1.svg');
+  position: absolute;
+  background-color: white;
+  /* bottom: -1.5px; */
+}
+.apexcharts-legend-series:last-child::after{
+  content: url('../src/assets/images/dot2.svg');
+  position: absolute;
+  background-color: white;
+  /* bottom: .1.5px; */
+}
+
+
+.apexcharts-legend-text{
+  margin:0 .5rem;
+  position: absolute;
+  top: 0;
+}
+
+.charts-container{
+  max-width:100%;
+  display:grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: .5rem;
+  margin-top:1rem;
+  
+}
+
+.charts-container > div{
+  padding: 1rem;
+  align-self: center;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.pieplot{
+  height: 100%;
+  /* align-self: center; */
+  justify-self: center;
+  width: calc(100% - 1rem);
+  font-size: 14px;
+  position: relative;
+}
+.pieplot-details{
+  margin-bottom: 1rem;
+  height:2rem;
+  display: grid;
+  grid-template-columns: 3fr 3.7fr .8fr;
+  
+}
+.pieplot-details ul{
+  display: flex;
+  justify-content: space-evenly;
+}
+.pieplot-details li{
+  padding: 9px;
+  display: inline-block;
+  font-size: .8rem;
+}
+.pieplot-details > div:first-child,
+.pieplot-details > div:nth-child(2){
+  align-self: center;
+}
+.pieplot-details > div:last-child{
+ width: 100%;
+ justify-self: end;
+ border-radius: .2rem;
+ background-color: rgb(231, 228, 228);
+ display: flex;
+ justify-content: center;
+}
+.pieplot-details img{
+  width: 30%;
+}
+.pieplot-details .active{
+  border-left: 1px solid rgb(231, 228, 228);
+  border-right: 1px solid rgb(231, 228, 228);
+  border-radius: .2rem;
+}
+
+.pieplot .total{
+  font-weight: 500;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: calc(50% - 0rem);
+  left: calc(50% - 1.7rem);
+}
+
+
+table{
+  font-size: .9rem;
+  border-collapse: collapse;
+  /* height: 100vh; */
+  width: 100%;
+  text-align: left;
+}
+.table-container{
+  max-width:100%;
+  display:grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+  margin:1rem 0;
+}
+.table-container > div{
+  height: 100%;
+  padding: 1.5rem 0;
+  align-self: center;
+  background-color: white;
+  border-radius: 1rem;
+}
+.heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-container button,.dashboard-ttd button{
+   background-color: white;
+   padding: .5rem 1rem;
+   border:1px solid lightgray;
+   border-radius: .5rem;
+}
+
+.main-head{
+  padding: 0 1rem;
+  margin-bottom:.8rem;
+}
+th{
+  padding:.5rem;
+}
+td{
+  font-weight: 300;
+  padding: .5rem;
+}
+tr{
+  line-height: 20px;
+  margin: 1rem 0;
+}
+
+.thead-main th{
+  background-color: rgb(250, 249, 249);
+  color: gray;
+  font-size: .8rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+td:last-child{
+  background-color: rgb(252, 238, 242);
+  color: red;
+  
+  border-left: 1px solid white;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  
+}
+.table-container td:last-child{
+  border-right: 1px solid white;
+  border-top: 15px solid white;
+  border-bottom: 15px solid white;
+}
+.table-container > div:last-child{
+  padding: 1.5rem 1rem;
+}
+
+.thing-to-do{
+  background-color: rgb(250, 249, 249);
+  padding:1rem;
+  margin-bottom: .5rem;
+  border-radius: .5rem;
+}
+.thing-to-do > p{
+  color: gray;
+  font-size: .8rem;
+}
+.thing-to-do h4{
+  font-weight: 400;
+}
+.thing-to-do-head{
+  margin-bottom: 1rem;
+} 
+
+.date-time-1,
+.date-time-2,
+.date-time-3{
+  font-size: .8rem;
+  color:#8181A5 ;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.date-time-1::before,
+.date-time-2::before,
+.date-time-3::before{
+   content: ' ';
+   position: absolute;
+   width: 8px;
+   height: 8px;
+   background-color: black;
+   left: 0;
+   bottom: 25%;
+   border-radius: 100%;
+}
+.date-time-1::before{
+  background-color: #8888a7;
+}
+.date-time-2::before{
+  background-color: orange;
+}
+.date-time-3::before{
+  background-color: green;
+}
+
+.dashboard-ttd{
+  height: 100%;
+}
+
+
+.intro{
+  margin:2rem 0;
+}
+
+.intro button{
+  margin-top: 1rem;
+  background-color: darkblue;
+  border: 1px solid darkblue;
+  border-radius: .5rem;
+  padding:.8rem 2rem;
+  color: white;
+  font-weight: bold;
+}
+.intro p{
+  margin-top: .3rem;
+  font-size: .8rem;
+  color: #8181A5;
+}
+
+.employee-details{
+  background-color: white;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns:2fr 1fr;
+  gap: 1rem;
+  border-radius:1rem;
+}
+
+.employee-details > div:nth-child(2){
+  font-size: .8rem;
+  border-radius: 1rem;
+  border: 1px solid lightgray;
+  background-color: rgb(250, 249, 249);
+  text-align: center;
+  height:max-content;
+  margin-top:15%;
+  padding: 2rem 4rem;
+}
+.employee-details > div:nth-child(2) p{
+  color: gray;
+}
+.plusFive{
+  background-color:rgb(240, 239, 239);
+  padding: .6rem;
+  border-radius: .5rem;
+}
+.plan-to-hire img{
+  background-color: rgb(248, 220, 167);
+  padding: .7rem;
+  border-radius: .2rem;
+
+}
+.plan-to-hire-img img{
+  margin-right: .2rem;
+}
+.employee-details > div:nth-child(2) div{
+  margin-bottom: 1rem;
+}
+
+.main-employee-top{
+  margin-bottom: 2rem;
+}
+.main-employee-top li{
+  display: inline-block;
+  margin-right: 10px;
+}
+.main-employee-top .active{
+  border: 1px solid lightgray;
+  padding:.5rem 1rem;
+  border-radius: .5rem;
+  
+}
+.main-employee-details{
+  font-size: .8rem;
+}
+.main-employee-details > div:first-child{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.main-employee-top button ,
+.employee-details > div:nth-child(2) button{
+  /* height: 100%; */
+  display: flex;
+  flex-wrap: nowrap;
+  gap:.5rem;
+  padding: .5rem 1rem;
+  color: white;
+  background-color: darkblue;
+  border: 1px solid gray;
+  border-radius:.5rem;
+  font-size:.8rem;
+  margin-left:.5rem;
+}
+.employee-details > div:nth-child(2) button{
+  display: inline-block;
+}
+.input-form {
+  position: relative;
+}
+.input-form input{
+  width: 100%;
+}
+.input-form img{
+  position: absolute;
+  padding: .5rem 0;
+  background-color: rgb(240, 240, 240);
+  top:2px;
+  left: 8px;
+}
+.main-employee-details input{
+  padding: .5rem .5rem .5rem 1.5rem;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: .5rem;
+}
+
+.emp-list-control ul>li{
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.emp-list-control{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emp-list-control button{
+  display: flex;
+  gap: .5rem;
+  font-size: .7rem;
+  color: grey;
+  background-color: rgb(240, 240, 240);
+  padding: .3rem .5rem;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: .2rem;
+}
+
+.emp-list-control ul li{
+  margin-right: .5em;
+  padding: .3rem .5rem;
+  border-radius: .2rem;
+  background-color: rgb(240, 240, 240);
+  position: relative;
+}
+
+.emp-list-control .active{
+  background-color: rgb(179, 191, 235);
+  color: darkblue;
+}
+
+.emp-list-control .active::after{
+  content: ' ';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: darkblue;
+  bottom: -50%;
+  left: 0;
+}
+
+.view-employee-content{
+  display: grid;
+  grid-template-columns:1fr 3fr;
+  gap: 2rem;
+}
+
+.container .onboard{
+  position: relative;
+  top: 1rem;
+  border-radius: .5rem;
+  padding: 6rem;
+  margin-top:15rem;
+  text-align: center;
+  background-color: white;
+  width:60%;
+  margin:auto;
+}
+
+.onboard >div{
+  margin-bottom: 2rem;
+}
+
+.onboard p{
+   font-size: .8rem;
+   color: gray;
+   margin-top: 1rem;
+}
+.dark-btn{
+  background-color: darkblue;
+  color: white;
+  font-size: .8rem;
+  padding:.5rem 5rem;
+  border:  1px solid darkblue;
+  border-radius: .5rem;
+  font-weight: 500;
+}
+
+.payroll-container{
+  border-radius: 1rem;
+  background-color: white;
+}
+.payroll-container > div:first-child{
+  border-bottom: 2px solid lightgrey;
+}
+
+.flex{
+  padding: 1rem 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+ 
+}
+.flex > div{
+  cursor: pointer;
+  font-size: .8rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: grey;
+}
+
+.flex span{
+  font-size: .8rem;
+  color: grey;
+  background-color: lightgray;
+  padding: .5rem .7rem;
+  border-radius: 50%;
+  margin-right: .6rem;
+}
+.flex .active{
+  color: black;
+  position: relative;
+}
+.flex .active > span{
+  background-color: darkblue;
+  color: white;
+}
+
+.flex .active::after{
+  content: ' ';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: darkblue;
+  bottom: calc(-1rem - 2px);
+  left: 0;
+}
+
+.payroll-content{
+  padding: 1rem;
+}
+
+
+.benefit-container{
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.benefit-container p{
+  margin-top: .5rem;
+  font-size: .8rem;
+  color: gray;
+}
+
+.benefit-container button{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  background-color: darkblue;
+  padding: .6rem 1rem;
+  border: 1px solid darkblue;
+  border-radius: .5rem;
+}
+
+.benefit-container button > p{
+  margin-top: 0;
+  color: white;
+  font-weight: bold;
+  
+}
+.benefit-container .hmo{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.benefit-container .part-two{
+  margin-top: 4rem;
+}
+
+.report-container p{
+  font-size: .8rem;
+}
+
+.report-container{
+  font-size: .8rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius:1rem ;
+}
+
+.report-container .date{
+  display: flex;
+  gap: 1rem;
+}
+.report-top{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.report-top p{
+  color: grey;
+  margin-top: .2rem;
+}
+.report-container td:nth-child(2){
+  color: darkblue;
+  background-color: unset;
+  border-radius: 0;
+  /* border: 1px solid lightgray; */
+}
+
+.report-container tr{
+  font-size: .8rem;
+  border: 10px solid white;
+  outline: 1px solid lightgray;
+  
+  padding: 3rem;
+  /* margin: 10rem 0; */
+}
+.report-container tr:first-child{
+  
+  border: 0;
+  outline: 0;
+}
+.wallet-table{
+  font-size: .8rem;
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+.wallet-table > div{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.wallet-table > div:first-child{
+  margin-bottom:1px;
+  color: #8181A5;
+  font-weight: 550;
+  padding: 1rem 2rem;
+  border-radius: 1rem 1rem 0 0;
+  background-color: rgb(250, 251, 253);
+}
+.wallet-table > div:nth-child(n+2){
+  background-color: var(--mainClr);
+  margin: 0 1rem .5rem 1rem;
+  padding: 1rem;
+  border: 2px solid #f4f7fc;
+  border-radius: .5rem;
+}
+.wallet-table > div:nth-child(n+2):hover{
+  transform: scale(1.01);
+  background-color: rgb(241, 250, 253);
+}
+.wallet-table .number{
+  color: #8181A5;
+}
+.wallet-table > div:last-child{
+  border: 0;
+  border-radius: 0;
+  background-color: white;
+  display: flex;
+}
+.wallet-table > div:last-child:hover{
+  transform:unset;
+  background-color: unset;
+}
