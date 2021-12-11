@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 import SideBar from '../../components/SideBar';
 import Header from '../../components/Header';
-import { new_employee_user_icon, searchIcon, prevIcon, nextIcon, planToHire, emp_row_img1, emp_row_img2, img8, plusFive} from '../../assets';
+import { new_employee_user_icon, searchIcon, prevIcon, nextIcon, planToHire, emp_row_img1, emp_row_img2,plusFive} from '../../assets';
 import EmployeeDetail from '../../components/Employees/employee';
 import EmployeeList from './employeeList';
 import { changeActiveNav } from '../../util/helper';
